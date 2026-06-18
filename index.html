@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+
+    <!-- Ajusta exibição em celular -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        CRUD em Arquivo
+    </title>
+
+    <!-- Arquivo de estilos -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <h1>
+        CRUD em Arquivo — AED III
+    </h1>
+
+
+    <!--
+        Área de ações.
+
+        Neste momento possui apenas
+        inserção para testes.
+
+        Futuramente:
+        inserir
+        buscar
+        alterar
+        excluir
+    -->
+
+    <section>
+
+        <button
+            id="btnInserir">
+            Inserir produto teste
+        </button>
+
+    </section>
+
+
+    <hr>
+
+
+    <!--
+        Área onde os produtos
+        serão desenhados.
+
+        O JavaScript substitui
+        esse conteúdo dinamicamente.
+    -->
+
+    <h2>
+        Produtos
+    </h2>
+
+
+    <div
+        id="visualizacao">
+        Nenhum produto
+    </div>
+
+
+    <!--
+        Ordem importante:
+
+        Produto
+        ↓
+
+        Arquivo
+        ↓
+
+        Visualizador
+        ↓
+
+        Aplicação
+    -->
+
+    <script src="js/conversor.js"></script>
+    <script src="js/produto.js"></script>
+    <script src="js/arquivo.js"></script>
+    <script src="js/visualizador.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

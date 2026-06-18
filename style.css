@@ -1,0 +1,71 @@
+/*
+    Configuração geral da página.
+
+    Define:
+    - fonte padrão
+    - espaço interno para afastar
+      o conteúdo das bordas
+*/
+
+body {
+    font-family: Arial;
+    padding: 30px;
+}
+
+
+
+/*
+    Estilo básico dos botões.
+
+    padding → aumenta área clicável
+    cursor → mostra que é interativo
+*/
+
+button {
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+
+
+/*
+    Área responsável por exibir
+    os produtos cadastrados.
+
+    display:flex
+    → organiza os produtos
+
+    flex-direction:column
+    → um produto abaixo do outro
+
+    gap
+    → espaço entre os itens
+*/
+
+#visualizacao {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+/*
+    Cartão visual de cada produto.
+
+    padding
+    → espaço interno
+
+    border
+    → separa visualmente registros
+
+    border-radius
+    → cantos arredondados
+*/
+
+.produto {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
