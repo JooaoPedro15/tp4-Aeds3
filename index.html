@@ -1,100 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-
+  <head>
     <!-- Configurações básicas da página -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <!-- Ajusta exibição em celular -->
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-        CRUD em Arquivo
-    </title>
+    <title>CRUD em Arquivo - Visualização Física</title>
 
     <!-- Arquivo de estilos -->
-    <link
-        rel="stylesheet"
-        href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
+  <body>
+    <header class="cabecalho">
+      <h1>Projeto Extensionista - AEDs 3</h1>
+    </header>
 
-<body>
+    <main class="visualizador-completo">
+      <section class="painel visualizacao-fisica">
+        <h2>Visualização Física do Arquivo de Bytes Produtos</h2>
 
-    <h1>
-        CRUD em Arquivo — AED III
-    </h1>
+        <div id="area-arquivo" class="area-arquivo">
+          <div
+            class="registro"
+            onmouseenter="
+              inspecionar('registro', 'ID: 1 | Nome: Notebook | Preço: 4500')
+            "
+            onmouseleave="limparInspecao()"
+          >
+            <div
+              class="campo lapide"
+              onmouseenter="inspecionar('campo', 'Lápide: 0')"
+              onmouseleave="limparInspecao()"
+            >
+              00
+            </div>
+            <div
+              class="campo tamanho"
+              onmouseenter="inspecionar('campo', 'Tamanho: 14 bytes')"
+              onmouseleave="limparInspecao()"
+            >
+              14
+            </div>
+            <div
+              class="campo dados"
+              onmouseenter="inspecionar('campo', 'Dados: 1|Notebook|4500')"
+              onmouseleave="limparInspecao()"
+            >
+              31 7C 4E 6F 74 65 62 6F 6F 6B 7C 34 35 30 30
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <div class="paineis-inferiores">
+        <section class="painel leitor-interativo">
+          <h2>Leitor Interativo</h2>
+          <div id="leitor-dados" class="conteudo-leitor">
+            <p><strong>Byte atual:</strong> -</p>
+            <p><strong>Operação:</strong> -</p>
+            <p><strong>ID:</strong> -</p>
+            <p><strong>Nome:</strong> -</p>
+            <p><strong>Preço:</strong> -</p>
+          </div>
+        </section>
 
-    <!--
-        Área de ações.
+        <section class="painel acoes-crud">
+          <h2>Ações no Arquivo - CRUD</h2>
+          <form id="formProduto" onsubmit="return false;" class="formulario">
+            <div class="formulario">
+              <input type="number" id="txtId" placeholder="ID (ex: 1)" />
+              <input type="text" id="txtNome" placeholder="Nome do Produto" />
+              <input type="number" id="txtPreco" placeholder="Preço (R$)" />
+            </div>
+            <div class="crud">
+              <button id="btnInserir" class="btn inserir">Inserir</button>
+              <button id="btnBuscar" class="btn buscar">Buscar</button>
+              <button id="btnAlterar" class="btn alterar">Alterar</button>
+              <button id="btnExcluir" class="btn excluir">Excluir</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
 
-        Neste momento possui apenas
-        inserção para testes.
-
-        Futuramente:
-        inserir
-        buscar
-        alterar
-        excluir
-    -->
-
-    <section>
-
-        <button
-            id="btnInserir">
-            Inserir produto teste
-        </button>
-
-    </section>
-
-
-    <hr>
-
-
-    <!--
-        Área onde os produtos
-        serão desenhados.
-
-        O JavaScript substitui
-        esse conteúdo dinamicamente.
-    -->
-
-    <h2>
-        Produtos
-    </h2>
-
-
-    <div
-        id="visualizacao">
-        Nenhum produto
-    </div>
-
-
-    <!--
-        Ordem importante:
-
-        Produto
-        ↓
-
-        Arquivo
-        ↓
-
-        Visualizador
-        ↓
-
-        Aplicação
-    -->
-
+    <footer class="rodape"></footer>
     <script src="js/conversor.js"></script>
     <script src="js/produto.js"></script>
     <script src="js/arquivo.js"></script>
     <script src="js/visualizador.js"></script>
     <script src="js/app.js"></script>
-
-</body>
-
+  </body>
 </html>

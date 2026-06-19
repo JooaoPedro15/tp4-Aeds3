@@ -1,71 +1,226 @@
-/*
-    Configuração geral da página.
-
-    Define:
-    - fonte padrão
-    - espaço interno para afastar
-      o conteúdo das bordas
-*/
+/*Geral*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
 
 body {
-    font-family: Arial;
-    padding: 30px;
+  background-color: #ffffff;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
 }
 
-
-
-/*
-    Estilo básico dos botões.
-
-    padding → aumenta área clicável
-    cursor → mostra que é interativo
-*/
-
-button {
-    padding: 10px 16px;
-    cursor: pointer;
+/*Header e footer*/
+.cabecalho {
+  background-color: #005e9c;
+  color: #ffffff;
+  padding: 20px 30px;
 }
 
-
-
-/*
-    Área responsável por exibir
-    os produtos cadastrados.
-
-    display:flex
-    → organiza os produtos
-
-    flex-direction:column
-    → um produto abaixo do outro
-
-    gap
-    → espaço entre os itens
-*/
-
-#visualizacao {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.rodape {
+  background-color: #005e9c;
+  color: #000000;
+  padding: 20px 30px;
+  margin-top: auto;
+  text-align: center;
+  font-size: 14px;
 }
 
+/*Paineis*/
+.visualizador-completo {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1; /*ocupa espaco todo*/
+}
 
+.paineis-inferiores {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  width: 100%;
+}
 
-/*
-    Cartão visual de cada produto.
+.paineis-inferiores .acoes-crud {
+  width: 50%;
+}
 
-    padding
-    → espaço interno
+.paineis-inferiores .leitor-interativo {
+  width: 50%;
+}
 
-    border
-    → separa visualmente registros
+/*Paineis inferiores*/
+.painel {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
 
-    border-radius
-    → cantos arredondados
-*/
+.painel h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: rgb(1, 28, 100);
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+}
 
-.produto {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+/*Visualização do arquivo*/
+
+#area-arquivo {
+  background-color: #c2e0ff;
+  border: 1px solid #cbcbe1;
+  min-height: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 3px;
+}
+
+.registro {
+  background-color: #c2e0ff;
+  border: 2px solid transparent;
+  padding: 3px;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.registro:hover {
+  border-color: #003b0d;
+  background-color: #00b609;
+  color: white;
+  box-shadow: 0 4px 12px rgba(51, 132, 148, 0.15);
+}
+
+.campo {
+  padding: 4px 4px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  word-break: break-word;
+}
+
+.campo.lapide {
+  background-color: #f3c9a7;
+  color: #5f3606;
+}
+
+.campo.tamanho {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+.campo.dados {
+  background-color: #fdbabd;
+  color: #850707;
+}
+
+.campo:hover {
+  border-color: #1e293b;
+  transform: scale(1.02);
+}
+
+/*Leitor interativo*/
+.indicador-acao {
+  background-color: #c2e0ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.conteudo-leitor {
+  background-color: #c2e0ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.conteudo-leitor p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/*CRUD*/
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.formulario input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.crud {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn.inserir {
+  background-color: #10b981;
+}
+.btn.buscar {
+  background-color: #3b82f6;
+}
+.btn.alterar {
+  background-color: #f59e0b;
+}
+.btn.excluir {
+  background-color: #ef4444;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+/*Animação para o arquivo que for modificado*/
+.destaque-inserir {
+  border-color: #10b981;
+  background-color: #ecfdf5;
+}
+.destaque-buscar {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+.destaque-alterar {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+.destaque-excluir {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  opacity: 0.6;
 }
