@@ -11,6 +11,7 @@ body {
   color: #1e293b;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /*Header e footer*/
@@ -22,11 +23,12 @@ body {
 
 .rodape {
   background-color: #005e9c;
-  color: #000000;
+  color: #ffffff;
   padding: 20px 30px;
   margin-top: auto;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /*Paineis*/
@@ -115,17 +117,17 @@ body {
   word-break: break-word;
 }
 
-.campo.lapide {
+.campo.lapide:hover {
   background-color: #f3c9a7;
   color: #5f3606;
 }
 
-.campo.tamanho {
+.campo.tamanho:hover {
   background-color: #fde68a;
   color: #92400e;
 }
 
-.campo.dados {
+.campo.dados:hover {
   background-color: #fdbabd;
   color: #850707;
 }

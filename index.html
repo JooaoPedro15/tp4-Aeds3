@@ -22,48 +22,19 @@
       <section class="painel visualizacao-fisica">
         <h2>Visualização Física do Arquivo de Bytes Produtos</h2>
 
-        <div id="area-arquivo" class="area-arquivo">
-          <div
-            class="registro"
-            onmouseenter="
-              inspecionar('registro', 'ID: 1 | Nome: Notebook | Preço: 4500')
-            "
-            onmouseleave="limparInspecao()"
-          >
-            <div
-              class="campo lapide"
-              onmouseenter="inspecionar('campo', 'Lápide: 0')"
-              onmouseleave="limparInspecao()"
-            >
-              00
-            </div>
-            <div
-              class="campo tamanho"
-              onmouseenter="inspecionar('campo', 'Tamanho: 14 bytes')"
-              onmouseleave="limparInspecao()"
-            >
-              14
-            </div>
-            <div
-              class="campo dados"
-              onmouseenter="inspecionar('campo', 'Dados: 1|Notebook|4500')"
-              onmouseleave="limparInspecao()"
-            >
-              31 7C 4E 6F 74 65 62 6F 6F 6B 7C 34 35 30 30
-            </div>
-          </div>
-        </div>
+        <div id="area-arquivo" class="area-arquivo"></div>
       </section>
 
       <div class="paineis-inferiores">
         <section class="painel leitor-interativo">
           <h2>Leitor Interativo</h2>
           <div id="leitor-dados" class="conteudo-leitor">
-            <p><strong>Byte atual:</strong> -</p>
-            <p><strong>Operação:</strong> -</p>
-            <p><strong>ID:</strong> -</p>
-            <p><strong>Nome:</strong> -</p>
-            <p><strong>Preço:</strong> -</p>
+            <p><strong>Operação:</strong> <span id="Operacao">-</span></p>
+            <p><strong>Lápide:</strong> <span id="Lapide">-</span></p>
+            <p><strong>Tamanho:</strong> <span id="Tamanho">-</span></p>
+            <p><strong>ID:</strong> <span id="Id">-</span></p>
+            <p><strong>Nome:</strong> <span id="Nome">-</span></p>
+            <p><strong>Preço:</strong> <span id="Preco">-</span></p>
           </div>
         </section>
 
@@ -71,9 +42,9 @@
           <h2>Ações no Arquivo - CRUD</h2>
           <form id="formProduto" onsubmit="return false;" class="formulario">
             <div class="formulario">
-              <input type="number" id="txtId" placeholder="ID (ex: 1)" />
-              <input type="text" id="txtNome" placeholder="Nome do Produto" />
-              <input type="number" id="txtPreco" placeholder="Preço (R$)" />
+              <input type="number" id="IdForm" placeholder="ID (ex: 1)" />
+              <input type="text" id="NomeForm" placeholder="Nome do Produto" />
+              <input type="number" id="PrecoForm" placeholder="Preço (R$)" />
             </div>
             <div class="crud">
               <button id="btnInserir" class="btn inserir">Inserir</button>
@@ -86,8 +57,19 @@
       </div>
     </main>
 
-    <footer class="rodape"></footer>
-    <script src="js/conversor.js"></script>
+    <footer class="rodape">
+      <p>
+        <strong
+          >Algoritmos e Estruturas de Dados III - Projeto Extensionista</strong
+        >
+      </p>
+      <p>
+        Desenvolvido por: Maria Clara G. Soares, Jamille Micaele S. Ferreira e
+        João Pedro Costa e Silva
+      </p>
+    </footer>
+
+    <script src="js/ByteStream.js"></script>
     <script src="js/produto.js"></script>
     <script src="js/arquivo.js"></script>
     <script src="js/visualizador.js"></script>

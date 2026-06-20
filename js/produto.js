@@ -1,91 +1,42 @@
 class Produto {
+  constructor(id, nome, preco) {
+    this.id = id;
+    this.nome = nome;
+    this.preco = preco;
+  }
 
-    /*
-        Representa um produto armazenado no arquivo.
+  /*
+    converte o objeto em bytes
+  */
+  serializar() {
+    const idBytes = ByteStream.writeInt(this.id);
+    const nomeBytes = ByteStream.writeString(this.nome);
+    const precoBytes = ByteStream.writeFloat(this.preco);
 
-        Cada produto possui:
-        - id → identificador único
-        - nome → nome do produto
-        - preco → valor do produto
-    */
+    return [
+      ...Array.from(idBytes),
+      ...Array.from(nomeBytes),
+      ...Array.from(precoBytes),
+    ];
+  }
 
-    constructor(id, nome, preco) {
+  /*
+    reconstroi um Produto a partir dos bytes
+  */
+  static desserializar(dados) {
+    const int8Dados = new Int8Array(dados);
+    let offset = 0;
 
-        this.id = id
-        this.nome = nome
-        this.preco = preco
+    const id = ByteStream.readInt(int8Dados, offset);
+    offset += 4;
 
-    }
+    const nome = ByteStream.readString(int8Dados, offset);
 
+    const tamNomeBytes = ByteStream.readShort(int8Dados, offset);
+    offset += 2 + tamNomeBytes; // avanca os 2 bytes do cabeçalho + as letras da string
 
-    /*
-        Converte o objeto Produto em bytes.
+    const preco = ByteStream.readFloat(int8Dados, offset);
 
-        Processo:
-
-        Produto
-        ↓
-        "1|Notebook|4500"
-        ↓
-        [49,124,78,111,...]
-
-        O caractere "|" separa os campos para
-        permitir reconstruir o objeto depois.
-    */
-
-    serializar() {
-
-        const texto =
-            `${this.id}|${this.nome}|${this.preco}`
-
-
-        return Conversor
-            .textoParaBytes(
-                texto
-            )
-
-    }
-
-
-    /*
-        Reconstrói um Produto a partir dos bytes.
-
-        Processo:
-
-        [49,124,78,...]
-        ↓
-        "1|Notebook|4500"
-        ↓
-        split("|")
-        ↓
-        Produto
-    */
-
-    static desserializar(bytes) {
-
-        const texto =
-            Conversor
-                .bytesParaTexto(
-                    bytes
-                )
-
-
-        // Divide o texto em campos
-        const [
-            id,
-            nome,
-            preco
-        ] =
-        texto.split("|")
-
-
-        // Cria novamente o objeto
-        return new Produto(
-            Number(id),
-            nome,
-            Number(preco)
-        )
-
-    }
-
+    return new Produto(id, nome, preco);
+  }
 }
