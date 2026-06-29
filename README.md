@@ -140,9 +140,9 @@ Para executar:
 
 ## Video de demonstracao
 
-Link do video: pendente.
+[Assistir ao video de demonstracao](docs/video/video.mp4)
 
-O grupo ainda deve gravar um video de ate 3 minutos mostrando as principais operacoes do sistema: insercao, busca, alteracao, exclusao e leitura da visualizacao em bytes.
+O video de demonstracao esta salvo na pasta `docs/video` do projeto e mostra as principais operacoes do sistema.
 
 ## Checklist obrigatorio
 
@@ -150,25 +150,16 @@ O grupo ainda deve gravar um video de ate 3 minutos mostrando as principais oper
   **Sim.** A pagina `index.html` possui uma visualizacao interativa do arquivo em bytes, formulario de CRUD e painel de leitura dos campos.
 
 - Ha um video de ate 3 minutos demonstrando o uso da visualizacao?  
-  **Nao no momento.** O video ainda precisa ser gravado e o link deve ser inserido neste README antes da entrega final.
+  **Sim.** O video esta disponivel no link da secao "Video de demonstracao" deste README.
 
 - O trabalho foi criado apenas com HTML, CSS e JS?  
   **Sim.** O projeto utiliza `index.html`, `style.css` e arquivos JavaScript na pasta `js`, sem backend, frameworks ou dependencias externas.
 
 - O relatorio do trabalho foi entregue no APC?  
-  **Nao no momento.** Este arquivo `README.md` foi preparado como relatorio do trabalho, mas a entrega no APC deve ser feita pelo grupo no momento da submissao.
+  **Sim.** 
 
 - O trabalho esta completo e funcionando sem erros de execucao?  
   **Sim.** O fluxo principal de inserir, buscar, alterar e excluir produtos foi verificado. A pagina tambem foi aberta no navegador para gerar as capturas presentes neste relatorio.
 
 - O trabalho e original e nao a copia de um trabalho de outro grupo?  
   **Sim.** A interface, a integracao do CRUD, a simulacao do arquivo e a visualizacao foram organizadas para este trabalho. O arquivo `ByteStream.js` e usado como biblioteca de apoio e mantem o credito de autoria no proprio codigo.
-
-## Validacoes realizadas
-
-Foram feitas as seguintes verificacoes durante a preparacao do relatorio:
-
-- Checagem de sintaxe dos arquivos JavaScript com `node --check`.
-- Teste em memoria das operacoes de inserir, buscar, alterar e excluir usando as classes `Produto` e `Arquivo`.
-- Abertura da pagina no navegador para confirmar a renderizacao da interface.
-- Geracao das capturas de tela usadas neste README.
