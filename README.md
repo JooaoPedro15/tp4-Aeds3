@@ -172,4 +172,3 @@ Foram feitas as seguintes verificacoes durante a preparacao do relatorio:
 - Teste em memoria das operacoes de inserir, buscar, alterar e excluir usando as classes `Produto` e `Arquivo`.
 - Abertura da pagina no navegador para confirmar a renderizacao da interface.
 - Geracao das capturas de tela usadas neste README.
-gi
